@@ -1,2 +1,2 @@
-# Incident-Response-for-Cybersecurity-Professionals
-Incident Response for Cybersecurity Professionals, Published by Packt
+# Incident-Response-with-Threat-Intelligence
+Incident Response with Threat Intelligence, Published by Packt
