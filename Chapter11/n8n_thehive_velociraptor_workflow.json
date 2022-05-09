@@ -1,0 +1,113 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "events": [
+          "case_artifact_create"
+        ]
+      },
+      "name": "TheHive Trigger",
+      "type": "n8n-nodes-base.theHiveTrigger",
+      "typeVersion": 1,
+      "position": [
+        640,
+        300
+      ],
+      "webhookId": "b1dcd275-0940-4925-9798-df9e121edb95",
+      "alwaysOutputData": true,
+      "retryOnFail": false,
+      "notesInFlow": false,
+      "executeOnce": false,
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "command": "=/usr/bin/pyvelociraptor --config /home/node/.n8n/api_client.yaml 'SELECT hunt(description=\"TheHive Hash Hunt::{{$json[\"body\"][\"object\"][\"_parent\"]}}::{{$json[\"body\"][\"object\"][\"data\"]}}\", expires=(now() + 60) * 1000000, artifacts=[\"Generic.Forensic.LocalHashes.Query\"],spec=dict(`Generic.Forensic.LocalHashes.Query`=dict(Hashes=\"Hash\\n{{$json[\"body\"][\"object\"][\"data\"]}}\\n\"))) AS Hunt from scope()'"
+      },
+      "name": "Velociraptor - Hash Hunt",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1050,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{$json[\"body\"][\"object\"][\"dataType\"]}}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "hash"
+            },
+            {
+              "value2": "filename",
+              "output": 1
+            }
+          ]
+        }
+      },
+      "name": "Route by Observable Type",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        820,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=/usr/bin/pyvelociraptor --config /home/node/.n8n/api_client.yaml 'SELECT hunt(description=\"TheHive Filename Hunt::{{$json[\"body\"][\"object\"][\"_parent\"]}}::{{$json[\"body\"][\"object\"][\"data\"]}}\", expires=(now() + 60) * 1000000, artifacts=[\"Windows.Forensics.FilenameSearch\"],spec=dict(`Windows.Forensics.FilenameSearch`=dict(yaraRule=\"wide nocase:{{$json[\"body\"][\"object\"][\"data\"]}}\"))) AS Hunt from scope()'"
+      },
+      "name": "Velociraptor - Filename Hunt",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1050,
+        360
+      ]
+    }
+  ],
+  "connections": {
+    "TheHive Trigger": {
+      "main": [
+        [
+          {
+            "node": "Route by Observable Type",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Observable Type": {
+      "main": [
+        [
+          {
+            "node": "Velociraptor - Hash Hunt",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Velociraptor - Filename Hunt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

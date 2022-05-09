@@ -1,0 +1,33 @@
+title: Procdump execution to dump the lsass process
+id: ab4b0432-5623-4baf-acb8-1139f4197e0c
+status: experimental
+description: Sigma rule to detect the execution of procdump to get the dump of the lsass process
+references:
+  - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003/T1003.md
+  - https://attack.mitre.org/techniques/T1003/001/
+tags:
+  - attack.credential_access
+  - attack.t1003.001
+  - car-2019-07-002
+author: investigator
+date: 2022/06/30
+logsource:
+  category: process_creation 
+  product: windows
+  service: sysmon
+detection:
+  selection1:
+    EventID: 1
+  selection2:
+    Image|contains: 
+      - 'procdump*.exe'
+  selection3:
+    CommandLine|contains: 
+      - 'lsass'
+  condition: all of selection*
+fields:
+  - hostname
+  - User
+falsepositives:
+  - Unlikely
+level: high 
