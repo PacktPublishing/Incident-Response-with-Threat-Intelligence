@@ -2,7 +2,7 @@
 
 <a href="https://www.packtpub.com/product/incident-response-with-threat-intelligence/9781801072953?utm_source=github&utm_medium=repository&utm_campaign=9781801072953"><img src="https://static.packt-cdn.com/products/9781801072953/cover/smaller" alt="Early Access" height="256px" align="right"></a>
 
-This is the code repository for [Early Access](https://www.packtpub.com/product/incident-response-with-threat-intelligence/9781801072953?utm_source=github&utm_medium=repository&utm_campaign=9781801072953), published by Packt.
+This is the code repository for [Incident Response with Threat Intelligence](https://www.packtpub.com/product/incident-response-with-threat-intelligence/9781801072953?utm_source=github&utm_medium=repository&utm_campaign=9781801072953), published by Packt.
 
 **Practical insights into developing an incident response capability through intelligence-based threat hunting**
 
