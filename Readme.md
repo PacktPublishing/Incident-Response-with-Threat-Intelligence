@@ -58,7 +58,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 
 
 ### Related products
-* Copyrights [[Packt]](https://www.packtpub.com/product/the-cybersecurity-playbook-for-modern-enterprises/9781803248639?utm_source=github&utm_medium=repository&utm_campaign=9781803248639) [[Amazon]](https://www.amazon.com/dp/1803248637)
+* The Cybersecurity Playbook for Modern Enterprises [[Packt]](https://www.packtpub.com/product/the-cybersecurity-playbook-for-modern-enterprises/9781803248639?utm_source=github&utm_medium=repository&utm_campaign=9781803248639) [[Amazon]](https://www.amazon.com/dp/1803248637)
 
 * CTI main objectives [[Packt]](https://www.packtpub.com/product/mastering-cyber-intelligence/9781800209404?utm_source=github&utm_medium=repository&utm_campaign=9781800209404) [[Amazon]](https://www.amazon.com/dp/1800209401)
 
