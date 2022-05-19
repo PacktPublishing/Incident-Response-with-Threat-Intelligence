@@ -6,7 +6,6 @@ This is the code repository for [Incident Response with Threat Intelligence](htt
 
 **Practical insights into developing an incident response capability through intelligence-based threat hunting**
 
-
 ## What is this book about?
 With constantly evolving cyber threats, developing a cybersecurity incident response capability to identify and contain threats is indispensable for any organization regardless of its size. This book covers theoretical concepts and a variety of real-life scenarios that will help you to apply these concepts within your organization. 
 
@@ -57,12 +56,10 @@ With the following software and hardware list you can run all code files present
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781801072953_ColorImages.pdf).
 
-
 ### Related products
 * The Cybersecurity Playbook for Modern Enterprises [[Packt]](https://www.packtpub.com/product/the-cybersecurity-playbook-for-modern-enterprises/9781803248639?utm_source=github&utm_medium=repository&utm_campaign=9781803248639) [[Amazon]](https://www.amazon.com/dp/1803248637)
 
 * Mastering Cyber Intelligence [[Packt]](https://www.packtpub.com/product/mastering-cyber-intelligence/9781800209404?utm_source=github&utm_medium=repository&utm_campaign=9781800209404) [[Amazon]](https://www.amazon.com/dp/1800209401)
-
 
 ## Get to Know the Author
 **Roberto Martinez (@r0bertmart1nez)**
