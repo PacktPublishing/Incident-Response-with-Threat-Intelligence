@@ -68,3 +68,7 @@ He has collaborated as an expert associate professor at Tecnologico de Monterrey
 Roberto has more than 18 years of experience in cybersecurity fields such as offensive security, malware analysis, digital forensics, incident response, threat intelligence, and threat hunting.
 He also worked as a security consultant and instructor for governments, financial institutions, and private corporations in Latin America.
 
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781801072953">https://packt.link/free-ebook/9781801072953 </a> </p>
